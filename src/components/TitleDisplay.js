@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { toggleEditing } from './../actions/titleActions';
+
 const TitleDisplay = (props)=> {
   console.log("titleDisplay props: ", props);
   const handleClick = () => {
