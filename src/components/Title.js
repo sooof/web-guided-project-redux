@@ -10,10 +10,6 @@ import TitleForm from './TitleForm';
 const Title = (props) => {
   console.log(props);
 
-  const handleToggleEditing = () => {
-    props.dispatch(toggleEditing());
-  }
-
   const handleTitleUpdate = (title) => {
     props.dispatch(updateTitle(title));
   }
@@ -23,7 +19,7 @@ const Title = (props) => {
       <h1>{props.appName}</h1>
       {
         !props.editing ? 
-          <TitleDisplay handleToggleEditing={handleToggleEditing}/>: 
+          <TitleDisplay />: 
           <TitleForm handleTitleUpdate={handleTitleUpdate}/>
       }
     </div>
