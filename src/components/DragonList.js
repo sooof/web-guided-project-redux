@@ -21,8 +21,8 @@ class DragonList extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    
+    console.log("DragonList props: ", this.props);
+
     return (
       <div>
         <div className="friends-list">
