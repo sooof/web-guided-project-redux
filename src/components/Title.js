@@ -37,8 +37,9 @@ const mapStateToProps = (state) => {
   console.log("currentState:", state);
 
   return({
-    newProp1: "Warren",
-    newProp2: "Longmire"
+    appName:state.appName,
+    editing: state.editing,
+    title: state.title
   });
 }
 
