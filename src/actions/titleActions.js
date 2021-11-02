@@ -6,5 +6,6 @@ export function toggleEditing() {
 }
 
 export const updateTitle = newTitle => {
+    console.log("2. In our action creator");
     return { type: UPDATE_TITLE, payload: newTitle };
 };
