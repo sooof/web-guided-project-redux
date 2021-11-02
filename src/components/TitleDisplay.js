@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { toggleEditing } from './../actions/titleActions';
 
 const TitleDisplay = (props)=> {
+  console.log("TitleDisplay props: ", props);
+  
   const handleClick = () => {
     props.dispatch(toggleEditing());
   }
@@ -24,7 +26,7 @@ const mapStateToProps = (state)=> {
 }
 
 const mapActionsToProps = {
-  toggleEditing
+  toggleEditing:toggleEditing
 }
 
-export default connect(mapStateToProps)(TitleDisplay);
+export default connect(mapStateToProps, mapActionsToProps)(TitleDisplay);
