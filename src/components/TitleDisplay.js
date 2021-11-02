@@ -7,7 +7,7 @@ const TitleDisplay = (props)=> {
   console.log("TitleDisplay props: ", props);
 
   const handleClick = () => {
-    props.toggleEditing();
+    toggleEditing();
   }
 
   return(<h2>
@@ -25,8 +25,8 @@ const mapStateToProps = (state)=> {
   });
 }
 
-const mapActionsToProps = {
-  toggleEditing:toggleEditing
-}
+// const mapActionsToProps = {
+//   toggleEditing:toggleEditing
+// }
 
-export default connect(mapStateToProps, mapActionsToProps)(TitleDisplay);
+export default connect(mapStateToProps, { toggleEditing })(TitleDisplay);
