@@ -7,7 +7,7 @@ const TitleDisplay = (props)=> {
   console.log("TitleDisplay props: ", props);
 
   const handleClick = () => {
-    toggleEditing();
+    props.toggleEditing();
   }
 
   return(<h2>
