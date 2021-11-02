@@ -10,7 +10,7 @@ import TitleForm from './TitleForm';
 
 const Title = (props) => {
   console.log(props);
-  
+
   const [state, dispatch] = useReducer(titleReducer, initialState);
 
   const handleToggleEditing = () => {
@@ -33,7 +33,9 @@ const Title = (props) => {
   );
 };
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
+  console.log("currentState:", state);
+
   return({
     newProp1: "Warren",
     newProp2: "Longmire"
