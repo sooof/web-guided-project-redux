@@ -1,5 +1,8 @@
 //1. InitialState
 //   - add members to initialState
+const initialState = {
+    
+}
 
 //2. reducer function (list of our actions)
 //  - make reducer function with state and action as arguments.
