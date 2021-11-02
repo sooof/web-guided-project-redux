@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import { updateTitle } from './../actions/titleActions';
+
 const TitleForm = (props) => {
     const [newTitleText, setNewTitleText] = useState();
 
@@ -9,7 +11,7 @@ const TitleForm = (props) => {
     };
 
     const handleSubmit = ()=> {
-        props.handleTitleUpdate(newTitleText);
+        props.dispatch(updateTitle());
     }
     
     return(<div>
@@ -27,4 +29,4 @@ const TitleForm = (props) => {
         </div>);
 }
 
-export default TitleForm;
+export default connect()(TitleForm);
