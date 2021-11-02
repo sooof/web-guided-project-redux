@@ -1,5 +1,6 @@
 import React from 'react';
 import DragonMember from './DragonMember';
+import { connect } from 'react-redux';
 
 class DragonList extends React.Component {
   state = {
