@@ -2,7 +2,6 @@ import React, { useState, useReducer } from 'react';
 
 import { connect } from 'react-redux';
 
-import titleReducer, { initialState } from '../reducers/titleReducer';
 import { toggleEditing, updateTitle } from './../actions/titleActions';
 
 import TitleDisplay from './TitleDisplay';
@@ -10,7 +9,7 @@ import TitleForm from './TitleForm';
 
 const Title = (props) => {
   console.log(props);
-  
+
   const handleToggleEditing = () => {
     props.dispatch(toggleEditing());
   }
