@@ -11,7 +11,7 @@ const Title = (props) => {
       <h1>{props.appName}</h1>
       {
         !props.editing ? 
-          <TitleDisplay />: 
+          <TitleDisplay />:
           <TitleForm />
       }
     </div>
