@@ -1,7 +1,10 @@
 //1. InitialState
 //   - add members to initialState
-const initialState = {
-    
+export const initialState = {
+    members: [
+        { name: 'Jojo Zhang', dragonStatus: true },
+        { name: 'Brandon Harris', dragonStatus: false }
+    ]
 }
 
 //2. reducer function (list of our actions)
