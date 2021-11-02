@@ -11,7 +11,7 @@ const TitleForm = (props) => {
     };
 
     const handleSubmit = ()=> {
-      props.updateTitle(newTitleText);
+      props.dispatch(updateTitle(newTitleText));
     }
     
     return(<div>
@@ -29,8 +29,8 @@ const TitleForm = (props) => {
         </div>);
 }
 
-// const mapActionsToProps = {
-//   updateTitle: updateTitle
-// }
+const mapActionsToProps = {
+  updateTitle: updateTitle
+}
 
-export default connect(null, { updateTitle })(TitleForm);
+export default connect()(TitleForm);
