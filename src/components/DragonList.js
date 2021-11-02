@@ -38,7 +38,7 @@ class DragonList extends React.Component {
         <button onClick={this.handleClick}>Add member</button>
       </div>
     );
-  }
+break  }
 }
 
 export default DragonList;
