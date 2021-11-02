@@ -25,6 +25,7 @@ const mapStateToProps = (state) => {
   });
 }
 
+
 // export default Title;
 export default connect(mapStateToProps)(Title);
 // mapStateToProps : a function that gets the current state and injects into the props of our component anything returned.

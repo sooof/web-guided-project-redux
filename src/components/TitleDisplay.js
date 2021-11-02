@@ -23,4 +23,8 @@ const mapStateToProps = (state)=> {
   });
 }
 
+const mapActionsToProps = {
+  toggleEditing
+}
+
 export default connect(mapStateToProps)(TitleDisplay);
