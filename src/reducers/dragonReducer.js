@@ -12,3 +12,14 @@ export const initialState = {
 //  - add in addMember as an action case
 //  - default case that returns state
 //  - export out our reducer
+const reducer = (state, action) => {
+    switch(action.type) {
+        case(ADD_MEMBER):
+            return {
+                ...state,
+                
+            }
+        default:
+            return state;
+    }
+}
