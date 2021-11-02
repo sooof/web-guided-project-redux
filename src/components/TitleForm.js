@@ -7,11 +7,11 @@ const TitleForm = (props) => {
     const [newTitleText, setNewTitleText] = useState();
 
     const handleChanges = e => {
-        setNewTitleText(e.target.value);
+      setNewTitleText(e.target.value);
     };
 
     const handleSubmit = ()=> {
-        props.dispatch(updateTitle());
+      props.dispatch(updateTitle());
     }
     
     return(<div>
