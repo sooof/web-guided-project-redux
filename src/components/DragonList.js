@@ -18,8 +18,6 @@ class DragonList extends React.Component {
   }
 
   render() {
-    console.log("DragonList props: ", this.props);
-
     return (
       <div>
         <div className="friends-list">
@@ -27,6 +25,7 @@ class DragonList extends React.Component {
             <DragonMember key={index} member={member}/>
           ))}
         </div>
+        
         <input
           type="text"
           value={this.state.newMember}
