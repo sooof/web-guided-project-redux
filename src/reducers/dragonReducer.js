@@ -12,12 +12,12 @@ export const initialState = {
 //  - add in addMember as an action case
 //  - default case that returns state
 //  - export out our reducer
-const reducer = (state, action) => {
+const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case(ADD_MEMBER):
+        case ADD_MEMBER:
             return {
                 ...state,
-                
+                members: [...this.members, {name: newMember, dragonStatus: true}]
             }
         default:
             return state;
