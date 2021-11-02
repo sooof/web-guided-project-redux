@@ -25,7 +25,7 @@ class DragonList extends React.Component {
             <DragonMember key={index} member={member}/>
           ))}
         </div>
-        
+
         <input
           type="text"
           value={this.state.newMember}
@@ -40,7 +40,7 @@ class DragonList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    members: state.members
+    members: state.dragon.members
   }
 }
 
