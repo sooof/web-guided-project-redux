@@ -15,7 +15,7 @@ const store = createStore(reducer);
 function App() {
   return (
     <div className="App">
-      <Title drilledProp="drilled" />
+      <Title />
       <DragonList />
     </div>
   );
