@@ -1,3 +1,5 @@
+import {ADD_MEMBER} from './../actions/dragonActions';
+
 //1. InitialState
 //   - add members to initialState
 export const initialState = {
