@@ -7,7 +7,7 @@ export const initialState = {
 };
   
 const titleReducer = (state = initialState, action) => {
-  console.log("3. In our reducer");
+  console.log("3. In our reducer", action);
   switch (action.type) {
     case UPDATE_TITLE:
       return {
