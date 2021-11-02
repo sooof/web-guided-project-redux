@@ -11,7 +11,6 @@ const TitleForm = (props) => {
     };
 
     const handleSubmit = ()=> {
-      console.log("1. Click is made.");
       props.dispatch(updateTitle(newTitleText));
     }
     
