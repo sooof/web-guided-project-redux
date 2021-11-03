@@ -16,7 +16,7 @@ const TitleDisplay = (props)=> {
 }
 const mapStateToProps = (state) => {
   console.log("currentState:", state)
-  return ({
+  return ({ 
     title: state.title
   });
 }
