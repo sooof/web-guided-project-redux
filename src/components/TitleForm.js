@@ -12,7 +12,8 @@ const TitleForm = (props) => {
 
     const handleSubmit = ()=> {
       console.log("1.click is made")
-      props.dispatch(updateTitle(newTitleText));
+      props.updateTitle(newTitleText);
+      // props.dispatch(updateTitle(newTitleText));
       //props.handleTitleUpdate(newTitleText);
     }
     
@@ -31,5 +32,12 @@ const TitleForm = (props) => {
         </div>);
 }
 
+const mapActionsToProps = {
+  updateTitle: updateTitle
+}
+
+
 // export default TitleForm;
-export default connect()(TitleForm);
+// export default connect()(TitleForm);
+export default connect(null, mapActionsToProps)(TitleForm);
+//export default connect(null, {updateTitle: updateTitle})(TitleForm);
