@@ -8,7 +8,7 @@ import TitleDisplay from './TitleDisplay';
 import TitleForm from './TitleForm';
 
 const Title = (props) => {
-  console.log("Title props = ",props)
+  //console.log("Title props = ",props)
   // const [state, dispatch] = useReducer(titleReducer, initialState);
 
   const handleToggleEditing = () => {
@@ -16,7 +16,7 @@ const Title = (props) => {
   }
 
   const handleTitleUpdate = (title) => {
-    console.log("Title handleTitleUpdate props = ",title)
+    //console.log("Title handleTitleUpdate props = ",title)
     props.dispatch(updateTitle(title));
   }
 
@@ -35,7 +35,7 @@ const Title = (props) => {
   );
 };
 const mapStateToProps = (state) => {
-  console.log("currentState:", state)
+  //console.log("currentState:", state)
   return ({
     appName: state.appName,
     editing: state.editing,

@@ -3,7 +3,7 @@ import {connect} from  'react-redux'
 import {toggleEditing} from '../actions/titleActions'
 
 const TitleDisplay = (props)=> {
-  console.log("TitleDisplay props = ",props)
+  //console.log("TitleDisplay props = ",props)
   const handleClick = () => {
     props.dispatch(toggleEditing());
     // props.handleToggleEditing();
