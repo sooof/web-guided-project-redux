@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react';
+import {connect} from  'react-redux'
 
 import titleReducer, { initialState } from '../reducers/titleReducer';
 import { toggleEditing, updateTitle} from './../actions/titleActions';
@@ -6,7 +7,8 @@ import { toggleEditing, updateTitle} from './../actions/titleActions';
 import TitleDisplay from './TitleDisplay';
 import TitleForm from './TitleForm';
 
-const Title = () => {
+const Title = (props) => {
+  console.log("Title props = ",props)
   const [state, dispatch] = useReducer(titleReducer, initialState);
 
   const handleToggleEditing = () => {
@@ -19,14 +21,32 @@ const Title = () => {
 
   return (
     <div>
-      <h1>{state.appName}</h1>
+      <h1>{props.appName}</h1>
       {
         !state.editing ? 
-          <TitleDisplay title={state.title} handleToggleEditing={handleToggleEditing}/>: 
+          <TitleDisplay  title={props.title} handleToggleEditing={handleToggleEditing}/>: 
           <TitleForm handleTitleUpdate={handleTitleUpdate}/>
       }
     </div>
   );
 };
-
-export default Title;
+const mapStateToProps = (state) => {
+  console.log("currentState:", state)
+  return ({
+    appName: state.appName,
+    editing: state.editing,
+    title: state.title
+  });
+}
+// const mapStateToProps = (state) => {
+//   console.log("currentState:", state)
+//   return ({
+//     newPop1: "Warren",
+//     newPop2: "Longmire"
+//   });
+// }
+export default connect(mapStateToProps)(Title);
+// export default connect(mapStateToProps, mapActionsToProps)(Title);
+// mapStateToProps : a function that gets the current state and injects into the props of our component anything returned.
+// mapActionsToProps : an object that contains action creator functions and injects those functions into props. Any function executed here is AUTOMATICALLY DISPATCHED.
+// component : the component we are injecting props into.
