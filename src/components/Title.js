@@ -29,7 +29,8 @@ const Title = (props) => {
           // <TitleDisplay  handleToggleEditing={handleToggleEditing}/>
           <TitleDisplay />
           : 
-          <TitleForm handleTitleUpdate={handleTitleUpdate}/>
+          // <TitleForm handleTitleUpdate={handleTitleUpdate}/>
+          <TitleForm />
       }
     </div>
   );
