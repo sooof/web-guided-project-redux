@@ -39,8 +39,8 @@ const Title = (props) => {
 const mapStateToProps = (state) => {
   //console.log("currentState:", state)
   return ({
-    appName: state.appName,
-    editing: state.editing,
+    appName: state.title.appName,
+    editing: state.title.editing,
   });
 }
 // const mapActionsToProps = {

@@ -21,7 +21,7 @@ const TitleDisplay = (props)=> {
 const mapStateToProps = (state) => {
   console.log("currentState:", state.dragon)
   return ({ 
-    title: state.title
+    title: state.title.title
   });
 }
 const mapActionsToProps = {

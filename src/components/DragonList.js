@@ -47,7 +47,7 @@ class DragonList extends React.Component {
 const mapStateToProps = (state) => {
   console.log("currentState: DragonList = ", state.dragon)
   return ({ 
-    members: state.members
+    members: state.dragon.members
   });
 }
 // const mapActionsToProps = {
