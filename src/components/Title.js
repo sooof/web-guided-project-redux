@@ -16,6 +16,7 @@ const Title = (props) => {
   }
 
   const handleTitleUpdate = (title) => {
+    console.log("Title handleTitleUpdate props = ",title)
     props.dispatch(updateTitle(title));
   }
 
@@ -24,7 +25,10 @@ const Title = (props) => {
       <h1>{props.appName}</h1>
       {
         !props.editing ? 
-          <TitleDisplay  title={props.title} handleToggleEditing={handleToggleEditing}/>: 
+        // <TitleDisplay  title={props.title} handleToggleEditing={handleToggleEditing}/>
+          <TitleDisplay  handleToggleEditing={handleToggleEditing}/>
+          // <TitleDisplay />
+          : 
           <TitleForm handleTitleUpdate={handleTitleUpdate}/>
       }
     </div>
