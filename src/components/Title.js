@@ -17,7 +17,8 @@ const Title = (props) => {
 
   const handleTitleUpdate = (title) => {
     //console.log("Title handleTitleUpdate props = ",title)
-    props.dispatch(updateTitle(title));
+    // props.dispatch(updateTitle(title));
+    props.updateTitle(title)
   }
 
   return (
@@ -42,6 +43,9 @@ const mapStateToProps = (state) => {
     editing: state.editing,
   });
 }
+const mapActionsToProps = {
+  updateTitle: updateTitle
+}
 // const mapStateToProps = (state) => {
 //   console.log("currentState:", state)
 //   return ({
@@ -49,7 +53,8 @@ const mapStateToProps = (state) => {
 //     newPop2: "Longmire"
 //   });
 // }
-export default connect(mapStateToProps)(Title);
+// export default connect(mapStateToProps)(Title);
+export default connect(mapStateToProps,mapActionsToProps )(Title);
 // export default connect(mapStateToProps, mapActionsToProps)(Title);
 // mapStateToProps : a function that gets the current state and injects into the props of our component anything returned.
 // mapActionsToProps : an object that contains action creator functions and injects those functions into props. Any function executed here is AUTOMATICALLY DISPATCHED.
