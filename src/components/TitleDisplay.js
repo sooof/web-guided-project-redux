@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from  'react-redux'
 import {toggleEditing} from '../actions/titleActions'
+
 const TitleDisplay = (props)=> {
   console.log("TitleDisplay props = ",props)
   const handleClick = () => {
-    props.handleToggleEditing();
+    props.dispatch(toggleEditing());
     // props.handleToggleEditing();
   }
 
