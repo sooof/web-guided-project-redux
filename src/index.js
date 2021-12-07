@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux'
 
 import './styles.css';
+function reducer () {
+  return {
+    title : "hi frome the Redux store!"
+  }
+}
+const store = createStore(reducer)
 
 function App() {
   return (
