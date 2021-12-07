@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Title from './components/Title';
-import DragonList from './components/DragonList';
 import './styles.css';
 
 function App() {
   return (
     <div className="App">
-      <Title />
-      <DragonList />
+      <h1>Hello Code</h1>
+      <h2>Start editing to see some magic happen!!!</h2>
     </div>
   );
 }
