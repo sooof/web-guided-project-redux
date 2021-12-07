@@ -7,6 +7,7 @@ export const initialState = {
   };
   
 const titleReducer = (state, action) => {
+  console.log("3. Inside the reducer");
   switch (action.type) {
     case UPDATE_TITLE:
       return {
@@ -15,6 +16,7 @@ const titleReducer = (state, action) => {
         editing: false
       };
     case TOGGLE_EDITING:
+      console.log("4. Excuting Toggle Editing action");
       return {
         ...state,
         editing: !state.editing
