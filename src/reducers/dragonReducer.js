@@ -5,9 +5,8 @@ import { ADD_MEMBER } from './../actions/dragonActions';
 //2. add members as a empty array
 //3. export initialState
 export const initialState = {
-    newMember: '',
     members: [
-      { name: 'Jojo iZhang', dragonStatus: true },
+      { name: 'Jojo Zhang', dragonStatus: true },
       { name: 'Brandon Harris', dragonStatus: false }
     ]
   };
@@ -21,7 +20,7 @@ export const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type){
         case ADD_MEMBER:
-            return state
+            return ({...state, members: [...state.members,  action.payload]})
         default:
             return state
     }

@@ -3,29 +3,32 @@ import DragonMember from './DragonMember';
 import { connect } from 'react-redux';
 
 import reducer, {initialState} from './../reducers/dragonReducer'
+import {addMember} from './../actions/dragonActions'
 
 class DragonList extends React.Component {
 
-  // state = {
-  //   newMember: '',
-  //   members: [
-  //     { name: 'Jojo Zhang', dragonStatus: true },
-  //     { name: 'Brandon Harris', dragonStatus: false }
-  //   ]
-  // };
+  state = {
+    newMember: '',
 
-  handleChanges = e => {
-    // this.setState({ ...this.state, newMember: e.target.value });
   };
 
-  handleClick = ()=> {
+  handleChanges = e => {
+    console.log("handleChange ", e.target.value)
+    this.setState({ ...this.state, newMember: e.target.value });
+  };
+
+  handleClick = (name)=> {
+    
     // this.setState({
-      // ...this.state,
-      // members: [...this.members, {name: newMember, dragonStatus: true}]
+    //   ...this.state,
+    //   members: [...this.members, {name: newMember, dragonStatus: true}]
     // })
+    this.props.dispatch(addMember(this.state.newMember));
+    // this.props.addMember(this.state.newMember)
   }
 
   render() {
+    console.log("DragonList this.props", this.props)
     return (
       <div>
         <div className="friends-list">
@@ -35,7 +38,7 @@ class DragonList extends React.Component {
         </div>
         <input
           type="text"
-          value={this.props.newMember}
+          value={this.state.newMember}
           onChange={this.handleChanges}
           placeholder="Add new member"
         />
@@ -47,10 +50,11 @@ class DragonList extends React.Component {
 const mapStateToProps = (state) => {
   console.log("DragonList currentState:", state)
   return {
-    newMember: state.newMember,
     members: state.members,
   }
 }
 
 // export default DragonList;
-export default connect(mapStateToProps)(DragonList);
+// export default connect(mapStateToProps,{})(DragonList);// no dispatch
+export default connect(mapStateToProps,)(DragonList);// have dispatch 
+//export default connect(mapStateToProps)(DragonList);// have dispatch
