@@ -11,16 +11,16 @@ const Title = (props) => {
   console.log("Title props = ", props)
   
   const {appName, title, editing, toggleEditing, updateTitle} = props
-  // const [state, dispatch] = useReducer(titleReducer, initialState);
+  const [state, dispatch] = useReducer(titleReducer, initialState);
 
   const handleToggleEditing = () => {
-    // dispatch(toggleEditing());
-    toggleEditing()
+    dispatch(toggleEditing());
+    // toggleEditing()
   }
 
   const handleTitleUpdate = (title) => {
-    // dispatch(updateTitle(title));
-    updateTitle(title)
+    dispatch(updateTitle(title));
+    // updateTitle(title)
   }
 
   return (
