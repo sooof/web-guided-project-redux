@@ -23,8 +23,9 @@ class DragonList extends React.Component {
     //   ...this.state,
     //   members: [...this.members, {name: newMember, dragonStatus: true}]
     // })
-    this.props.dispatch(addMember(this.state.newMember));
+    // this.props.dispatch(addMember(this.state.newMember));
     // this.props.addMember(this.state.newMember)
+    this.props.addMember(this.state.newMember)
   }
 
   render() {
@@ -56,5 +57,7 @@ const mapStateToProps = (state) => {
 
 // export default DragonList;
 // export default connect(mapStateToProps,{})(DragonList);// no dispatch
-export default connect(mapStateToProps,)(DragonList);// have dispatch 
+// export default connect(mapStateToProps,)(DragonList);// have dispatch 
 //export default connect(mapStateToProps)(DragonList);// have dispatch
+
+export default connect(mapStateToProps,{addMember})(DragonList);// have dispatch 
