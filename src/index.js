@@ -12,10 +12,12 @@ const store = createStore(reducer);
 console.log("App ", store);
 function App() {
   return (
-    <div className="App">
-      <Title />
-      <DragonList />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Title />
+        <DragonList />
+      </div>
+    </Provider>
   );
 }
 
