@@ -28,7 +28,7 @@ const Title = (props) => {
       <h1>{appName}</h1>
       {
         !editing ? 
-          <TitleDisplay title={title} handleToggleEditing={handleToggleEditing}/>: 
+          <TitleDisplay handleToggleEditing={handleToggleEditing}/>: 
           <TitleForm handleTitleUpdate={handleTitleUpdate}/>
       }
     </div>
@@ -36,7 +36,7 @@ const Title = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("Movie currentState:", state)
+  // console.log("Movie currentState:", state)
   return {
     appName: state.appName,
     title: state.title,
