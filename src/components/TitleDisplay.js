@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const TitleDisplay = (props)=> {
+  const {title, handleToggleEditing} = props
   const handleClick = () => {
-    props.handleToggleEditing();
+    handleToggleEditing();
   }
 
   return(<h2>
-      {props.title}{' '}
+      {title}{' '}
       <i
         className="far fa-edit"
         onClick={handleClick}
