@@ -6,7 +6,8 @@ import DragonList from './components/DragonList';
 import './styles.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './reducers/titleReducer';
+// import reducer from './reducers/titleReducer';
+ import reducer from './reducers/dragonReducer';
 
 const store = createStore(reducer);
 console.log("App ", store);

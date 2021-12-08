@@ -1,7 +1,7 @@
 import React, { useState, useReducer } from 'react';
 import { connect } from 'react-redux';
 
-import titleReducer, { initialState } from '../reducers/titleReducer';
+// import titleReducer, { initialState } from '../reducers/titleReducer';
 import { toggleEditing, updateTitle} from './../actions/titleActions';
 
 import TitleDisplay from './TitleDisplay';
@@ -11,7 +11,7 @@ const Title = (props) => {
   console.log("Title props = ", props)
   
   const {appName, title, editing, toggleEditing, updateTitle} = props
-  const [state, dispatch] = useReducer(titleReducer, initialState);
+  // const [state, dispatch] = useReducer(titleReducer, initialState);
 
   return (
     <div>
