@@ -12,23 +12,26 @@ function reducer () {
      user: {
        name: 'Dustin'
      },
+     movies : ['Star Wars', 'Lord of the Rings', 'Harry Potter'],
+     todoList: [{task: 'Learn Redux', id: 0, completed: false}],
+     moviesToWatch: 13
   }
 }
 
 
 function App(props) {
-  console.log(store)
+  // console.log(store)
   return (
     <div className="App">
       <h1>Hello Code</h1>
       {/* <h2> {store.title} </h2> */}
       <MovieList/>
-      <h2>Start editing to see some magic happen!!!</h2>
+      {/* <h2>Start editing to see some magic happen!!!</h2> */}
     </div>
   );  
 }
 const store = createStore(reducer)
-console.log(store)
+// console.log(store)
 const rootElement = document.getElementById('root');
 ReactDOM.render(
   <Provider store={store}>
