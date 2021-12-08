@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import titleReducer from './titleReducer'
-import dragonReducer from './dragonReducer';
+import title from './titleReducer'
+import dragon from './dragonReducer';
 
 const rootReducer = combineReducers({
-    titleReducer,
-    dragonReducer
+    titleReducer: title,
+    dragonReducer: dragon
 })
 
 export default rootReducer;
