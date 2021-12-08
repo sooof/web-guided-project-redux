@@ -10,7 +10,11 @@ export const initialState = {
 }
 
 const reducer = (state = initialState, actions) => {
-    return state
+    switch(actions.type){
+        default:
+            return state
+    }
+    // return state
 }
 
 export default reducer;
