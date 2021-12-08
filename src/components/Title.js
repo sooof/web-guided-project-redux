@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react';
+import { connect } from 'react-redux';
 
 import titleReducer, { initialState } from '../reducers/titleReducer';
 import { toggleEditing, updateTitle} from './../actions/titleActions';
@@ -6,27 +7,44 @@ import { toggleEditing, updateTitle} from './../actions/titleActions';
 import TitleDisplay from './TitleDisplay';
 import TitleForm from './TitleForm';
 
-const Title = () => {
-  const [state, dispatch] = useReducer(titleReducer, initialState);
+const Title = (props) => {
+  console.log("Title props = ", props)
+  
+  // const [state, dispatch] = useReducer(titleReducer, initialState);
 
   const handleToggleEditing = () => {
-    dispatch(toggleEditing());
+    // dispatch(toggleEditing());
+    props.toggleEditing()
   }
 
   const handleTitleUpdate = (title) => {
-    dispatch(updateTitle(title));
+    // dispatch(updateTitle(title));
+    props.updateTitle(title)
   }
 
   return (
     <div>
-      <h1>{state.appName}</h1>
+      <h1>{props.appName}</h1>
       {
-        !state.editing ? 
-          <TitleDisplay title={state.title} handleToggleEditing={handleToggleEditing}/>: 
+        !props.editing ? 
+          <TitleDisplay title={props.title} handleToggleEditing={handleToggleEditing}/>: 
           <TitleForm handleTitleUpdate={handleTitleUpdate}/>
       }
     </div>
   );
 };
 
-export default Title;
+const mapStateToProps = (state) => {
+  console.log("Movie currentState:", state)
+  return {
+    appName: state.appName,
+    title: state.title,
+    editing: state.editing
+  }
+}
+
+// export default Title;
+export default connect(mapStateToProps,{toggleEditing, updateTitle})(Title);
+//mapStateToProps: function that gets state as an argument, and return an object that is injected into a component's props
+//mapActionsToProps: an object that should hold action creator functions. Functions are injected into props AND automatically dispatch when executed
+//component: the component we are injecting props into
