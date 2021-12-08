@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {toggleEditing} from './../actions/titleActions'
 
 const TitleDisplay = (props)=> {
-  const {title, handleToggleEditing} = props
+  const {title, toggleEditing} = props
   const handleClick = () => {
-    handleToggleEditing();
+    // handleToggleEditing();
+    toggleEditing()
   }
 
   return(<h2>
@@ -23,4 +25,4 @@ const mapStateToProps = state => {
 }
 
 // export default TitleDisplay;
-export default connect(mapStateToProps, {})(TitleDisplay);
+export default connect(mapStateToProps, {toggleEditing})(TitleDisplay);
