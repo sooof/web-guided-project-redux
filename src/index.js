@@ -2,34 +2,36 @@ import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux';
+import MovieList from "./components/MovieList"
 
 import './styles.css';
-const initialState = {
-  title : "hi frome the Redux store!"
-}
+
+
 function reducer () {
   return {
-    state
+     user: {
+       name: 'Dustin'
+     },
   }
 }
 
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, initialState)
-  console.log("App ",state)
+function App(props) {
+  console.log(store)
   return (
     <div className="App">
       <h1>Hello Code</h1>
-      <h2> {state.title} </h2>
+      {/* <h2> {store.title} </h2> */}
+      <MovieList/>
       <h2>Start editing to see some magic happen!!!</h2>
     </div>
   );  
 }
-// const store = createStore(reducer)s
-// console.log(store)
+const store = createStore(reducer)
+console.log(store)
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-  // <Provider store={store}>
+  <Provider store={store}>
     <App /> 
-  // </Provider>  
+  </Provider>  
   , rootElement);
