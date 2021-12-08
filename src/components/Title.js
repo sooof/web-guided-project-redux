@@ -28,9 +28,9 @@ const Title = (props) => {
 const mapStateToProps = (state) => {
   // console.log("Movie currentState:", state)
   return {
-    appName: state.appName,
-    title: state.title,
-    editing: state.editing
+    appName: state.titleReducer.appName,
+    title: state.titleReducer.title,
+    editing: state.titleReducer.editing
   }
 }
 
