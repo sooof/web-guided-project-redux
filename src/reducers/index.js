@@ -11,6 +11,8 @@ export const initialState = {
 
 const reducer = (state = initialState, actions) => {
     switch(actions.type){
+        case ADD_MOVIE:
+            return {...state, movies: [...state.movies, actions.payload]}
         default:
             return state
     }
